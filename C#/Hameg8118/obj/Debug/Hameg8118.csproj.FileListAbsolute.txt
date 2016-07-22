@@ -1,0 +1,152 @@
+C:\Dokumenty\C#\Hameg8118\Hameg8118\bin\Debug\Hameg8118.exe.config
+C:\Dokumenty\C#\Hameg8118\Hameg8118\bin\Debug\Hameg8118.exe
+C:\Dokumenty\C#\Hameg8118\Hameg8118\bin\Debug\Hameg8118.pdb
+C:\Dokumenty\C#\Hameg8118\Hameg8118\obj\Debug\Hameg8118.csprojResolveAssemblyReference.cache
+C:\Dokumenty\C#\Hameg8118\Hameg8118\obj\Debug\MainWindow.g.cs
+C:\Dokumenty\C#\Hameg8118\Hameg8118\obj\Debug\App.g.cs
+C:\Dokumenty\C#\Hameg8118\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.cache
+C:\Dokumenty\C#\Hameg8118\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.lref
+C:\Dokumenty\C#\Hameg8118\Hameg8118\obj\Debug\MainWindow.baml
+C:\Dokumenty\C#\Hameg8118\Hameg8118\obj\Debug\Hameg8118.g.resources
+C:\Dokumenty\C#\Hameg8118\Hameg8118\obj\Debug\Hameg8118.Properties.Resources.resources
+C:\Dokumenty\C#\Hameg8118\Hameg8118\obj\Debug\Hameg8118.csproj.GenerateResource.Cache
+C:\Dokumenty\C#\Hameg8118\Hameg8118\obj\Debug\Hameg8118.exe
+C:\Dokumenty\C#\Hameg8118\Hameg8118\obj\Debug\Hameg8118.pdb
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\bin\Debug\Hameg8118.exe.config
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\Hameg8118.exe
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\Hameg8118.pdb
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\bin\Debug\Hameg8118.exe
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\bin\Debug\Hameg8118.pdb
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\Hameg8118.csprojResolveAssemblyReference.cache
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\MainWindow.g.cs
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\App.g.cs
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.cache
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.lref
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\MainWindow.baml
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\Hameg8118.g.resources
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\Hameg8118.Properties.Resources.resources
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\Hameg8118.csproj.GenerateResource.Cache
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\LogSettings.g.cs
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\LogSettings.baml
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\Compensation.g.cs
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\Compensation.baml
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\About.g.cs
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\About.baml
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\HowToConnect.g.cs
+C:\Users\kaktus\Desktop\Hameg8118\Hameg8118\obj\Debug\HowToConnect.baml
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\bin\Debug\Hameg8118.exe.config
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\Hameg8118.exe
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\Hameg8118.pdb
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\bin\Debug\Hameg8118.exe
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\bin\Debug\Hameg8118.pdb
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\Hameg8118.csprojResolveAssemblyReference.cache
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\About.g.cs
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\Compensation.g.cs
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\HowToConnect.g.cs
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\LogSettings.g.cs
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\MainWindow.g.cs
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\App.g.cs
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.cache
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.lref
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\About.baml
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\Compensation.baml
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\HowToConnect.baml
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\LogSettings.baml
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\MainWindow.baml
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\Hameg8118.g.resources
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\Hameg8118.Properties.Resources.resources
+C:\Dokumenty\Git\HM8118\C#\Hameg8118\obj\Debug\Hameg8118.csproj.GenerateResource.Cache
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\bin\Debug\Hameg8118.exe.config
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\Hameg8118.exe
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\Hameg8118.pdb
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\bin\Debug\Hameg8118.exe
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\bin\Debug\Hameg8118.pdb
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\Hameg8118.csprojResolveAssemblyReference.cache
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\About.g.cs
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\Compensation.g.cs
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\HowToConnect.g.cs
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\LogSettings.g.cs
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\MainWindow.g.cs
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\App.g.cs
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.cache
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.lref
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\About.baml
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\Compensation.baml
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\HowToConnect.baml
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\LogSettings.baml
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\MainWindow.baml
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\Hameg8118.g.resources
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\Hameg8118.Properties.Resources.resources
+C:\Users\jpolonsky\Desktop\HM8118\C#\Hameg8118\obj\Debug\Hameg8118.csproj.GenerateResource.Cache
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\bin\Debug\Hameg8118.exe.config
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\Hameg8118.exe
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\Hameg8118.pdb
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\bin\Debug\Hameg8118.exe
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\bin\Debug\Hameg8118.pdb
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\Hameg8118.csprojResolveAssemblyReference.cache
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\About.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\Compensation.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\HowToConnect.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\LogSettings.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\MainWindow.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\App.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.cache
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.lref
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\About.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\Compensation.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\HowToConnect.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\LogSettings.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\MainWindow.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\Hameg8118.g.resources
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\Hameg8118.Properties.Resources.resources
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits\C#\Hameg8118\obj\Debug\Hameg8118.csproj.GenerateResource.Cache
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\bin\Debug\Hameg8118.exe.config
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\Hameg8118.exe
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\Hameg8118.pdb
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\bin\Debug\Hameg8118.exe
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\bin\Debug\Hameg8118.pdb
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\Hameg8118.csprojResolveAssemblyReference.cache
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\About.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\Compensation.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\HowToConnect.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\LogSettings.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\MainWindow.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\App.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.cache
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.lref
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\About.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\Compensation.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\HowToConnect.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\LogSettings.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\MainWindow.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\Hameg8118.g.resources
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\Hameg8118.Properties.Resources.resources
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits - nefunkční\C#\Hameg8118\obj\Debug\Hameg8118.csproj.GenerateResource.Cache
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\bin\Debug\Hameg8118.exe.config
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\Hameg8118.exe
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\Hameg8118.pdb
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\bin\Debug\Hameg8118.exe
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\bin\Debug\Hameg8118.pdb
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\Hameg8118.csprojResolveAssemblyReference.cache
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\About.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\Compensation.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\HowToConnect.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\LogSettings.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\MainWindow.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\App.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.cache
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.lref
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\About.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\Compensation.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\HowToConnect.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\LogSettings.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\MainWindow.baml
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\Hameg8118.g.resources
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\Hameg8118.Properties.Resources.resources
+C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\Hameg8118.csproj.GenerateResource.Cache

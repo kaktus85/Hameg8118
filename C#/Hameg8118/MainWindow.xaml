@@ -1,0 +1,280 @@
+﻿<Window x:Name="startingWindow" x:Class="Hameg8118.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hameg8118"
+        mc:Ignorable="d"
+        Title="Hameg 8118 Control Program – kaktus circuits" Height="425" Width="665" MaxHeight="425" MaxWidth="665" MinWidth="262" MinHeight="192" Closing="startingWindow_Closing" Icon="icon.ico" KeyDown="startingWindow_KeyDown">
+    <Window.Resources>
+        <local:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+        <Canvas x:Key="ClipboardValueIcon" Width="32" Height="32">
+            <Path Fill="#ff000000" Data="F1 M 22.333,19.200 L 22.333,14.933 L 15.933,21.333 L 22.333,27.733 L 22.333,23.467 L 32.000,23.467 L 32.000,19.200 L 22.333,19.200 Z"/>
+            <Path Fill="#ff000000" Data="F1 M 23.467,25.600 L 25.600,25.600 L 25.600,29.867 C 25.567,30.467 25.367,30.967 24.967,31.367 C 24.567,31.767 24.067,31.967 23.467,32.000 L 2.133,32.000 C 0.967,32.000 0.000,31.033 0.000,29.867 L 0.000,6.400 C 0.000,5.233 0.967,4.267 2.133,4.267 L 8.533,4.267 C 8.533,1.900 10.433,0.000 12.800,0.000 C 15.167,0.000 17.067,1.900 17.067,4.267 L 23.467,4.267 C 24.633,4.267 25.600,5.233 25.600,6.400 L 25.600,17.067 L 23.467,17.067 L 23.467,10.667 L 2.133,10.667 L 2.133,29.867 L 23.467,29.867 L 23.467,25.600 Z"/>
+            <Path Fill="#ffffffff" Data="F1 M 4.267,8.533 L 21.333,8.533 C 21.333,7.367 20.367,6.400 19.200,6.400 L 17.067,6.400 C 15.900,6.400 14.933,5.433 14.933,4.267 C 14.933,3.100 13.967,2.133 12.800,2.133 C 11.633,2.133 10.667,3.100 10.667,4.267 C 10.667,5.433 9.700,6.400 8.533,6.400 L 6.400,6.400 C 5.233,6.400 4.267,7.367 4.267,8.533 Z"/>
+            <Path Fill="#ff000000" Data="F1 M 8.605,19.576 C 9.703,19.666 11.288,19.450 11.288,18.010 C 11.288,16.929 10.441,16.335 9.506,16.335 C 8.209,16.335 7.543,17.289 7.561,18.586 L 5.130,18.586 C 5.221,15.993 6.877,14.228 9.487,14.228 C 11.504,14.228 13.719,15.471 13.719,17.722 C 13.719,18.928 13.125,19.954 11.954,20.296 L 11.954,20.332 C 13.341,20.639 14.187,21.773 14.187,23.195 C 14.187,25.842 11.954,27.336 9.506,27.336 C 6.679,27.336 4.771,25.644 4.824,22.745 L 7.255,22.745 C 7.309,24.114 7.993,25.230 9.470,25.230 C 10.622,25.230 11.522,24.455 11.522,23.249 C 11.522,21.341 9.848,21.377 8.605,21.377 L 8.605,19.576 Z"/>
+        </Canvas>
+        <Canvas x:Key="ClipboardUnitIcon" Width="32" Height="32">
+            <Path Fill="#ff000000" Data="F1 M 22.333,19.200 L 22.333,14.933 L 15.933,21.333 L 22.333,27.733 L 22.333,23.467 L 32.000,23.467 L 32.000,19.200 L 22.333,19.200 Z"/>
+            <Path Fill="#ff000000" Data="F1 M 23.467,25.600 L 25.600,25.600 L 25.600,29.867 C 25.567,30.467 25.367,30.967 24.967,31.367 C 24.567,31.767 24.067,31.967 23.467,32.000 L 2.133,32.000 C 0.967,32.000 0.000,31.033 0.000,29.867 L 0.000,6.400 C 0.000,5.233 0.967,4.267 2.133,4.267 L 8.533,4.267 C 8.533,1.900 10.433,0.000 12.800,0.000 C 15.167,0.000 17.067,1.900 17.067,4.267 L 23.467,4.267 C 24.633,4.267 25.600,5.233 25.600,6.400 L 25.600,17.067 L 23.467,17.067 L 23.467,10.667 L 2.133,10.667 L 2.133,29.867 L 23.467,29.867 L 23.467,25.600 Z"/>
+            <Path Fill="#ffffffff" Data="F1 M 4.267,8.533 L 21.333,8.533 C 21.333,7.367 20.367,6.400 19.200,6.400 L 17.067,6.400 C 15.900,6.400 14.933,5.433 14.933,4.267 C 14.933,3.100 13.967,2.133 12.800,2.133 C 11.633,2.133 10.667,3.100 10.667,4.267 C 10.667,5.433 9.700,6.400 8.533,6.400 L 6.400,6.400 C 5.233,6.400 4.267,7.367 4.267,8.533 Z"/>
+            <Path Fill="#ff000000" Data="F1 M 12.097,24.384 L 12.097,24.960 L 15.302,24.960 L 15.302,27.084 L 10.135,27.084 L 10.135,23.411 C 11.863,23.069 12.709,21.593 12.709,19.918 C 12.709,17.974 11.431,16.335 9.378,16.335 C 7.289,16.335 5.993,17.992 5.993,19.972 C 5.993,21.701 6.804,22.997 8.532,23.411 L 8.532,27.084 L 3.364,27.084 L 3.364,24.960 L 6.569,24.960 L 6.569,24.384 C 4.480,23.807 3.364,21.827 3.364,19.720 C 3.364,16.299 6.065,14.102 9.360,14.102 C 12.655,14.102 15.320,16.263 15.320,19.684 C 15.320,21.755 14.258,23.897 12.097,24.384 Z"/>
+        </Canvas>
+        <Canvas x:Key="Logo" Width="160.402" Height="68.000">
+            <Canvas>
+                <Canvas>
+                    <Path Fill="#ff221e1f" Data="F1 M 57.395,29.096 L 51.488,19.674 L 48.570,22.680 L 48.570,29.096 L 45.230,29.096 L 45.230,2.553 L 48.570,2.553 L 48.570,19.023 L 55.777,10.270 L 59.680,10.270 L 53.650,17.424 L 61.016,29.096 L 57.395,29.096 Z"/>
+                    <Path Fill="#ff221e1f" Data="F1 M 73.707,19.850 C 72.652,19.615 71.914,19.498 71.492,19.498 C 69.805,19.498 68.428,19.932 67.361,20.799 C 66.295,21.666 65.762,22.691 65.762,23.875 C 65.762,25.832 66.916,26.810 69.225,26.810 C 70.912,26.810 72.406,26.008 73.707,24.402 L 73.707,19.850 Z M 74.023,26.934 C 72.687,28.609 70.643,29.447 67.889,29.447 C 66.412,29.447 65.132,28.912 64.048,27.840 C 62.964,26.768 62.422,25.434 62.422,23.840 C 62.422,21.930 63.257,20.316 64.927,18.998 C 66.597,17.680 68.727,17.020 71.316,17.020 C 72.020,17.020 72.816,17.172 73.707,17.477 C 73.707,14.430 72.348,12.906 69.629,12.906 C 67.543,12.906 65.937,13.469 64.812,14.594 L 63.406,11.799 C 64.039,11.283 64.915,10.842 66.034,10.473 C 67.153,10.104 68.223,9.918 69.242,9.918 C 71.973,9.918 73.956,10.539 75.192,11.781 C 76.429,13.023 77.047,14.998 77.047,17.705 L 77.047,24.455 C 77.047,26.107 77.539,27.209 78.523,27.760 L 78.523,29.430 C 77.164,29.430 76.147,29.236 75.474,28.850 C 74.800,28.463 74.316,27.824 74.023,26.934 Z"/>
+                    <Path Fill="#ff221e1f" Data="F1 M 94.467,29.096 L 88.561,19.674 L 85.643,22.680 L 85.643,29.096 L 82.303,29.096 L 82.303,2.553 L 85.643,2.553 L 85.643,19.023 L 92.850,10.270 L 96.752,10.270 L 90.723,17.424 L 98.088,29.096 L 94.467,29.096 Z"/>
+                    <Path Fill="#ff221e1f" Data="F1 M 101.656,12.906 L 99.477,12.906 L 99.477,10.270 L 101.656,10.270 L 101.656,6.332 L 104.996,5.049 L 104.996,10.270 L 110.164,10.270 L 110.164,12.906 L 104.996,12.906 L 104.996,22.258 C 104.996,23.840 105.264,24.965 105.797,25.633 C 106.330,26.301 107.187,26.635 108.371,26.635 C 109.227,26.635 110.111,26.418 111.025,25.984 L 111.518,28.920 C 110.135,29.271 108.617,29.447 106.965,29.447 C 105.477,29.447 104.221,28.895 103.195,27.787 C 102.170,26.680 101.656,25.281 101.656,23.594 L 101.656,12.906 Z"/>
+                    <Path Fill="#ff221e1f" Data="F1 M 117.898,10.270 L 117.898,22.275 C 117.898,25.182 119.158,26.635 121.678,26.635 C 122.779,26.635 123.787,26.318 124.701,25.685 C 125.615,25.053 126.219,24.320 126.512,23.488 L 126.512,10.270 L 129.852,10.270 L 129.852,29.096 L 126.512,29.096 L 126.512,26.494 C 126.137,27.232 125.385,27.910 124.254,28.525 C 123.123,29.141 122.018,29.447 120.939,29.447 C 118.877,29.447 117.299,28.855 116.203,27.672 C 115.107,26.488 114.559,24.807 114.559,22.627 L 114.559,10.270 L 117.898,10.270 Z"/>
+                    <Path Fill="#ff221e1f" Data="F1 M 133.174,27.971 L 134.352,24.807 C 136.215,26.025 137.715,26.635 138.852,26.635 C 140.914,26.635 141.945,25.768 141.945,24.033 C 141.945,22.791 140.949,21.725 138.957,20.834 C 137.422,20.131 136.389,19.598 135.855,19.234 C 135.322,18.871 134.859,18.459 134.467,17.996 C 134.074,17.533 133.781,17.041 133.588,16.520 C 133.395,15.998 133.297,15.438 133.297,14.840 C 133.297,13.293 133.859,12.086 134.984,11.219 C 136.109,10.352 137.580,9.918 139.396,9.918 C 140.768,9.918 142.496,10.352 144.582,11.219 L 143.633,14.313 C 142.309,13.258 140.978,12.730 139.643,12.730 C 138.846,12.730 138.176,12.918 137.631,13.293 C 137.086,13.668 136.812,14.143 136.812,14.717 C 136.812,15.924 137.498,16.838 138.869,17.459 L 141.260,18.549 C 142.725,19.217 143.791,19.979 144.459,20.834 C 145.127,21.689 145.461,22.762 145.461,24.051 C 145.461,25.738 144.869,27.060 143.686,28.016 C 142.502,28.971 140.861,29.447 138.764,29.447 C 136.783,29.447 134.920,28.955 133.174,27.971 Z"/>
+                    <Path Fill="#ff221e1f" Data="F1 M 59.434,47.799 L 57.781,50.154 C 57.441,49.814 56.841,49.492 55.979,49.188 C 55.118,48.883 54.271,48.730 53.439,48.730 C 51.623,48.730 50.182,49.367 49.115,50.639 C 48.049,51.910 47.516,53.652 47.516,55.867 C 47.516,58.070 48.061,59.750 49.150,60.904 C 50.240,62.059 51.752,62.635 53.686,62.635 C 55.186,62.635 56.697,62.055 58.221,60.895 L 59.539,63.707 C 57.746,64.867 55.525,65.447 52.877,65.447 C 50.311,65.447 48.189,64.586 46.514,62.863 C 44.838,61.141 44.000,58.809 44.000,55.867 C 44.000,52.867 44.870,50.459 46.610,48.643 C 48.351,46.826 50.732,45.918 53.756,45.918 C 54.728,45.918 55.783,46.123 56.920,46.533 C 58.057,46.943 58.895,47.365 59.434,47.799 Z"/>
+                    <Path Fill="#ff221e1f" Data="F1 M 66.500,39.150 C 67.074,39.150 67.563,39.354 67.968,39.758 C 68.372,40.162 68.574,40.645 68.574,41.207 C 68.574,41.781 68.372,42.271 67.968,42.676 C 67.563,43.080 67.074,43.281 66.500,43.281 C 65.937,43.281 65.454,43.080 65.050,42.676 C 64.645,42.271 64.443,41.781 64.443,41.207 C 64.443,40.633 64.643,40.146 65.041,39.748 C 65.439,39.350 65.926,39.150 66.500,39.150 Z M 64.672,65.096 L 64.672,49.082 L 62.088,49.082 L 62.088,46.270 L 68.012,46.270 L 68.012,65.096 L 64.672,65.096 Z"/>
+                    <Path Fill="#ff221e1f" Data="F1 M 83.551,49.486 C 82.824,48.982 82.092,48.730 81.353,48.730 C 80.170,48.730 79.136,49.275 78.251,50.365 C 77.366,51.455 76.924,52.768 76.924,54.303 L 76.924,65.096 L 73.584,65.096 L 73.584,46.270 L 76.924,46.270 L 76.924,49.275 C 78.143,47.037 79.953,45.918 82.355,45.918 C 82.953,45.918 83.814,46.023 84.939,46.234 L 83.551,49.486 Z"/>
+                    <Path Fill="#ff221e1f" Data="F1 M 101.516,47.799 L 99.863,50.154 C 99.523,49.814 98.924,49.492 98.062,49.188 C 97.201,48.883 96.353,48.730 95.521,48.730 C 93.705,48.730 92.264,49.367 91.197,50.639 C 90.131,51.910 89.598,53.652 89.598,55.867 C 89.598,58.070 90.143,59.750 91.232,60.904 C 92.322,62.059 93.834,62.635 95.768,62.635 C 97.268,62.635 98.779,62.055 100.303,60.895 L 101.621,63.707 C 99.828,64.867 97.607,65.447 94.959,65.447 C 92.393,65.447 90.271,64.586 88.596,62.863 C 86.920,61.141 86.082,58.809 86.082,55.867 C 86.082,52.867 86.952,50.459 88.692,48.643 C 90.434,46.826 92.814,45.918 95.838,45.918 C 96.811,45.918 97.865,46.123 99.002,46.533 C 100.139,46.943 100.977,47.365 101.516,47.799 Z"/>
+                    <Path Fill="#ff221e1f" Data="F1 M 108.301,46.270 L 108.301,58.275 C 108.301,61.182 109.561,62.635 112.080,62.635 C 113.182,62.635 114.189,62.318 115.103,61.685 C 116.018,61.053 116.621,60.320 116.914,59.488 L 116.914,46.270 L 120.254,46.270 L 120.254,65.096 L 116.914,65.096 L 116.914,62.494 C 116.539,63.232 115.787,63.910 114.656,64.525 C 113.525,65.141 112.420,65.447 111.342,65.447 C 109.279,65.447 107.701,64.855 106.605,63.672 C 105.510,62.488 104.961,60.807 104.961,58.627 L 104.961,46.270 L 108.301,46.270 Z"/>
+                    <Path Fill="#ff221e1f" Data="F1 M 128.252,39.150 C 128.826,39.150 129.316,39.354 129.721,39.758 C 130.125,40.162 130.326,40.645 130.326,41.207 C 130.326,41.781 130.125,42.271 129.721,42.676 C 129.316,43.080 128.826,43.281 128.252,43.281 C 127.689,43.281 127.207,43.080 126.803,42.676 C 126.398,42.271 126.195,41.781 126.195,41.207 C 126.195,40.633 126.395,40.146 126.793,39.748 C 127.191,39.350 127.678,39.150 128.252,39.150 Z M 126.424,65.096 L 126.424,49.082 L 123.840,49.082 L 123.840,46.270 L 129.764,46.270 L 129.764,65.096 L 126.424,65.096 Z"/>
+                    <Path Fill="#ff221e1f" Data="F1 M 136.268,48.906 L 134.088,48.906 L 134.088,46.270 L 136.268,46.270 L 136.268,42.332 L 139.607,41.049 L 139.607,46.270 L 144.775,46.270 L 144.775,48.906 L 139.607,48.906 L 139.607,58.258 C 139.607,59.840 139.875,60.965 140.408,61.633 C 140.941,62.301 141.799,62.635 142.982,62.635 C 143.838,62.635 144.723,62.418 145.637,61.984 L 146.129,64.920 C 144.746,65.271 143.228,65.447 141.576,65.447 C 140.088,65.447 138.832,64.895 137.807,63.787 C 136.781,62.680 136.268,61.281 136.268,59.594 L 136.268,48.906 Z"/>
+                    <Path Fill="#ff221e1f" Data="F1 M 148.115,63.971 L 149.293,60.807 C 151.156,62.025 152.656,62.635 153.793,62.635 C 155.855,62.635 156.887,61.768 156.887,60.033 C 156.887,58.791 155.891,57.725 153.898,56.834 C 152.363,56.131 151.330,55.598 150.797,55.234 C 150.264,54.871 149.801,54.459 149.408,53.996 C 149.016,53.533 148.723,53.041 148.529,52.520 C 148.336,51.998 148.238,51.438 148.238,50.840 C 148.238,49.293 148.801,48.086 149.926,47.219 C 151.051,46.352 152.521,45.918 154.338,45.918 C 155.709,45.918 157.437,46.352 159.523,47.219 L 158.574,50.313 C 157.250,49.258 155.920,48.730 154.584,48.730 C 153.787,48.730 153.117,48.918 152.572,49.293 C 152.027,49.668 151.754,50.143 151.754,50.717 C 151.754,51.924 152.439,52.838 153.811,53.459 L 156.201,54.549 C 157.666,55.217 158.732,55.979 159.400,56.834 C 160.068,57.689 160.402,58.762 160.402,60.051 C 160.402,61.738 159.811,63.060 158.627,64.016 C 157.443,64.971 155.803,65.447 153.705,65.447 C 151.725,65.447 149.861,64.955 148.115,63.971 Z"/>
+                </Canvas>
+                <Canvas>
+                    <Path StrokeThickness="5.0" Stroke="#ff221e1f" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 17.500,6.500 L 17.500,61.500"/>
+                    <Canvas>
+                        <Path StrokeThickness="5.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 17.500,41.699 C 11.424,41.699 6.500,36.774 6.500,30.700"/>
+                        <Path StrokeThickness="5.0" Stroke="#ff221e1f" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 6.500,14.200 L 6.500,30.700"/>
+                    </Canvas>
+                    <Canvas>
+                        <Path StrokeThickness="5.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 28.500,23.000 C 28.500,29.075 23.576,34.000 17.500,34.000"/>
+                        <Path StrokeThickness="5.0" Stroke="#ff221e1f" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeMiterLimit="1.0" Data="F1 M 28.500,12.000 L 28.500,23.000"/>
+                    </Canvas>
+                </Canvas>
+                <Path StrokeThickness="2.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 34.000,63.700 C 34.000,65.523 32.522,67.000 30.700,67.000 L 4.300,67.000 C 2.478,67.000 1.000,65.523 1.000,63.700 L 1.000,4.300 C 1.000,2.478 2.478,1.000 4.300,1.000 L 30.700,1.000 C 32.522,1.000 34.000,2.478 34.000,4.300 L 34.000,63.700 Z"/>
+            </Canvas>
+        </Canvas>
+        <Canvas x:Key="Instrument" Width="282.960" Height="131.198">
+            <Canvas>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 225.323,4.663 L 202.648,4.663 L 202.648,0.918 L 225.323,0.918 L 225.323,4.663 Z M 81.396,4.663 L 58.721,4.663 L 58.721,0.918 L 81.396,0.918 L 81.396,4.663 Z M 264.342,36.658 L 246.342,0.500 L 36.428,0.500 L 18.428,36.658 L 45.224,36.658 L 45.224,29.538 L 72.156,29.538 L 72.156,36.658 L 211.403,36.658 L 211.403,29.538 L 238.335,29.538 L 238.335,36.658 L 264.342,36.658 Z">
+                    <Path.Fill>
+                        <LinearGradientBrush MappingMode="Absolute" StartPoint="5.043,-57.504" EndPoint="250.957,-57.504">
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0.00" Color="#ff00b0ea"/>
+                                <GradientStop Offset="1.00" Color="#ff0365a9"/>
+                            </LinearGradientBrush.GradientStops>
+                            <LinearGradientBrush.Transform>
+                                <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,13.385,-38.925" />
+                            </LinearGradientBrush.Transform>
+                        </LinearGradientBrush>
+                    </Path.Fill>
+                </Path>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 130.693,71.507 C 130.693,73.846 128.780,75.759 126.442,75.759 L 53.633,75.759 C 51.294,75.759 49.381,73.846 49.381,71.507 L 49.381,56.884 C 49.381,54.545 51.294,52.632 53.633,52.632 L 126.442,52.632 C 128.780,52.632 130.693,54.545 130.693,56.884 L 130.693,71.507 Z M 260.018,43.538 L 22.752,43.538 C 20.413,43.538 18.500,45.451 18.500,47.790 L 18.500,100.286 C 18.500,102.624 20.413,104.538 22.752,104.538 L 260.018,104.538 C 262.357,104.538 264.270,102.624 264.270,100.286 L 264.270,47.790 C 264.270,45.451 262.357,43.538 260.018,43.538 Z">
+                    <Path.Fill>
+                        <LinearGradientBrush MappingMode="Absolute" StartPoint="5.115,-112.963" EndPoint="250.885,-112.963">
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0.00" Color="#ff00b0ea"/>
+                                <GradientStop Offset="1.00" Color="#ff0365a9"/>
+                            </LinearGradientBrush.GradientStops>
+                            <LinearGradientBrush.Transform>
+                                <MatrixTransform Matrix="1.000,0.000,-0.000,-1.000,13.385,-38.925" />
+                            </LinearGradientBrush.Transform>
+                        </LinearGradientBrush>
+                    </Path.Fill>
+                </Path>
+                <Path Opacity="0.7" StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Fill="#ffffffff" Data="F1 M 126.442,75.759 L 53.633,75.759 C 51.294,75.759 49.381,73.846 49.381,71.507 L 49.381,56.884 C 49.381,54.545 51.294,52.632 53.633,52.632 L 126.442,52.632 C 128.780,52.632 130.693,54.545 130.693,56.884 L 130.693,71.507 C 130.693,73.846 128.780,75.759 126.442,75.759 Z"/>
+                <Canvas>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 57.697,82.207 L 57.697,86.481 C 57.697,87.612 56.797,88.538 55.697,88.538 L 49.280,88.538 C 48.180,88.538 47.280,87.612 47.280,86.481 L 47.280,82.207"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 72.717,82.207 L 72.717,86.481 C 72.717,87.612 71.817,88.538 70.717,88.538 L 64.300,88.538 C 63.200,88.538 62.300,87.612 62.300,86.481 L 62.300,82.207"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 87.736,82.207 L 87.736,86.481 C 87.736,87.612 86.836,88.538 85.736,88.538 L 79.319,88.538 C 78.219,88.538 77.319,87.612 77.319,86.481 L 77.319,82.207"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 102.755,82.207 L 102.755,86.481 C 102.755,87.612 101.855,88.538 100.755,88.538 L 94.338,88.538 C 93.238,88.538 92.338,87.612 92.338,86.481 L 92.338,82.207"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 117.775,82.207 L 117.775,86.481 C 117.775,87.612 116.875,88.538 115.775,88.538 L 109.358,88.538 C 108.258,88.538 107.358,87.612 107.358,86.481 L 107.358,82.207"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 132.794,82.207 L 132.794,86.481 C 132.794,87.612 131.894,88.538 130.794,88.538 L 124.377,88.538 C 123.277,88.538 122.377,87.612 122.377,86.481 L 122.377,82.207"/>
+                </Canvas>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 33.082,68.406 L 33.082,72.680 C 33.082,73.811 32.182,74.736 31.082,74.736 L 24.665,74.736 C 23.565,74.736 22.665,73.811 22.665,72.680 L 22.665,68.406"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 33.082,82.207 L 33.082,86.481 C 33.082,87.612 32.182,88.538 31.082,88.538 L 24.665,88.538 C 23.565,88.538 22.665,87.612 22.665,86.481 L 22.665,82.207"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 33.082,94.465 L 33.082,98.738 C 33.082,99.869 32.182,100.795 31.082,100.795 L 24.665,100.795 C 23.565,100.795 22.665,99.869 22.665,98.738 L 22.665,94.465"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 57.560,94.465 L 57.560,98.738 C 57.560,99.869 56.660,100.795 55.560,100.795 L 49.143,100.795 C 48.043,100.795 47.143,99.869 47.143,98.738 L 47.143,94.465"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 72.606,94.465 L 72.606,98.738 C 72.606,99.869 71.706,100.795 70.606,100.795 L 64.189,100.795 C 63.089,100.795 62.189,99.869 62.189,98.738 L 62.189,94.465"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 87.653,94.465 L 87.653,98.738 C 87.653,99.869 86.753,100.795 85.653,100.795 L 79.236,100.795 C 78.136,100.795 77.236,99.869 77.236,98.738 L 77.236,94.465"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 102.700,94.465 L 102.700,98.738 C 102.700,99.869 101.800,100.795 100.700,100.795 L 94.283,100.795 C 93.183,100.795 92.283,99.869 92.283,98.738 L 92.283,94.465"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 117.747,94.465 L 117.747,98.738 C 117.747,99.869 116.847,100.795 115.747,100.795 L 109.330,100.795 C 108.230,100.795 107.330,99.869 107.330,98.738 L 107.330,94.465"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 132.794,94.465 L 132.794,98.738 C 132.794,99.869 131.894,100.795 130.794,100.795 L 124.377,100.795 C 123.277,100.795 122.377,99.869 122.377,98.738 L 122.377,94.465"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 153.352,50.830 L 153.352,55.104 C 153.352,56.235 152.452,57.160 151.352,57.160 L 144.935,57.160 C 143.835,57.160 142.935,56.235 142.935,55.104 L 142.935,50.830"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 153.352,59.576 L 153.352,63.850 C 153.352,64.981 152.452,65.907 151.352,65.907 L 144.935,65.907 C 143.835,65.907 142.935,64.981 142.935,63.850 L 142.935,59.576"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 153.352,68.323 L 153.352,72.597 C 153.352,73.728 152.452,74.653 151.352,74.653 L 144.935,74.653 C 143.835,74.653 142.935,73.728 142.935,72.597 L 142.935,68.323"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 153.352,82.207 L 153.352,86.481 C 153.352,87.612 152.452,88.538 151.352,88.538 L 144.935,88.538 C 143.835,88.538 142.935,87.612 142.935,86.481 L 142.935,82.207"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 169.056,82.207 L 169.056,86.481 C 169.056,87.612 168.156,88.538 167.056,88.538 L 160.639,88.538 C 159.539,88.538 158.639,87.612 158.639,86.481 L 158.639,82.207"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 153.352,94.465 L 153.352,98.738 C 153.352,99.869 152.452,100.795 151.352,100.795 L 144.935,100.795 C 143.835,100.795 142.935,99.869 142.935,98.738 L 142.935,94.465"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 169.056,94.465 L 169.056,98.738 C 169.056,99.869 168.156,100.795 167.056,100.795 L 160.639,100.795 C 159.539,100.795 158.639,99.869 158.639,98.738 L 158.639,94.465"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 209.404,50.817 L 209.404,55.091 C 209.404,56.222 208.504,57.147 207.404,57.147 L 200.987,57.147 C 199.887,57.147 198.987,56.222 198.987,55.091 L 198.987,50.817"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 225.354,50.817 L 225.354,55.091 C 225.354,56.222 224.454,57.147 223.354,57.147 L 216.937,57.147 C 215.837,57.147 214.937,56.222 214.937,55.091 L 214.937,50.817"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 241.867,50.817 L 241.867,55.091 C 241.867,56.222 240.967,57.147 239.867,57.147 L 233.450,57.147 C 232.350,57.147 231.450,56.222 231.450,55.091 L 231.450,50.817"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 258.281,50.817 L 258.281,55.091 C 258.281,56.222 257.381,57.147 256.281,57.147 L 249.864,57.147 C 248.764,57.147 247.864,56.222 247.864,55.091 L 247.864,50.817"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 209.404,59.736 L 209.404,64.010 C 209.404,65.141 208.504,66.067 207.404,66.067 L 200.987,66.067 C 199.887,66.067 198.987,65.141 198.987,64.010 L 198.987,59.736"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 225.354,59.736 L 225.354,64.010 C 225.354,65.141 224.454,66.067 223.354,66.067 L 216.937,66.067 C 215.837,66.067 214.937,65.141 214.937,64.010 L 214.937,59.736"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 241.867,59.736 L 241.867,64.010 C 241.867,65.141 240.967,66.067 239.867,66.067 L 233.450,66.067 C 232.350,66.067 231.450,65.141 231.450,64.010 L 231.450,59.736"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 258.281,59.736 L 258.281,64.010 C 258.281,65.141 257.381,66.067 256.281,66.067 L 249.864,66.067 C 248.764,66.067 247.864,65.141 247.864,64.010 L 247.864,59.736"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 209.404,68.840 L 209.404,73.114 C 209.404,74.245 208.504,75.171 207.404,75.171 L 200.987,75.171 C 199.887,75.171 198.987,74.245 198.987,73.114 L 198.987,68.840"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 225.354,68.840 L 225.354,73.114 C 225.354,74.245 224.454,75.171 223.354,75.171 L 216.937,75.171 C 215.837,75.171 214.937,74.245 214.937,73.114 L 214.937,68.840"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 241.867,68.840 L 241.867,73.114 C 241.867,74.245 240.967,75.171 239.867,75.171 L 233.450,75.171 C 232.350,75.171 231.450,74.245 231.450,73.114 L 231.450,68.840"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 258.281,68.840 L 258.281,73.114 C 258.281,74.245 257.381,75.171 256.281,75.171 L 249.864,75.171 C 248.764,75.171 247.864,74.245 247.864,73.114 L 247.864,68.840"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 31.362,57.133 L 24.385,57.133 C 23.285,57.133 22.385,56.233 22.385,55.133 L 22.385,52.781 C 22.385,51.681 23.285,50.781 24.385,50.781 L 31.362,50.781 C 32.462,50.781 33.362,51.681 33.362,52.781 L 33.362,55.133 C 33.362,56.233 32.462,57.133 31.362,57.133 Z"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 200.937,93.376 C 200.937,96.138 198.699,98.376 195.937,98.376 C 193.176,98.376 190.937,96.138 190.937,93.376 C 190.937,90.615 193.176,88.376 195.937,88.376 C 198.699,88.376 200.937,90.615 200.937,93.376 Z"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 220.353,93.376 C 220.353,96.138 218.115,98.376 215.353,98.376 C 212.592,98.376 210.353,96.138 210.353,93.376 C 210.353,90.615 212.592,88.376 215.353,88.376 C 218.115,88.376 220.353,90.615 220.353,93.376 Z"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 239.769,93.376 C 239.769,96.138 237.531,98.376 234.769,98.376 C 232.008,98.376 229.769,96.138 229.769,93.376 C 229.769,90.615 232.008,88.376 234.769,88.376 C 237.531,88.376 239.769,90.615 239.769,93.376 Z"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 259.185,93.376 C 259.185,96.138 256.947,98.376 254.185,98.376 C 251.424,98.376 249.185,96.138 249.185,93.376 C 249.185,90.615 251.424,88.376 254.185,88.376 C 256.947,88.376 259.185,90.615 259.185,93.376 Z"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 182.369,92.634 C 182.369,94.567 180.802,96.134 178.869,96.134 C 176.936,96.134 175.369,94.567 175.369,92.634 C 175.369,90.701 176.936,89.134 178.869,89.134 C 180.802,89.134 182.369,90.701 182.369,92.634 Z"/>
+                <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 184.609,61.663 C 184.609,66.634 180.580,70.663 175.609,70.663 C 170.639,70.663 166.609,66.634 166.609,61.663 C 166.609,56.693 170.639,52.663 175.609,52.663 C 180.580,52.663 184.609,56.693 184.609,61.663 Z"/>
+                <Canvas>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 160.979,53.848 L 166.599,57.118 C 165.820,58.448 165.369,59.988 165.369,61.648 C 165.369,63.308 165.820,64.858 166.609,66.188 L 160.989,69.478 C 159.640,67.178 158.869,64.508 158.869,61.648 C 158.869,58.798 159.640,56.138 160.979,53.848 Z"/>
+                </Canvas>
+                <Canvas>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 167.794,76.293 L 171.064,70.673 C 172.395,71.453 173.934,71.903 175.594,71.903 C 177.254,71.903 178.804,71.453 180.135,70.663 L 183.424,76.283 C 181.124,77.633 178.455,78.403 175.594,78.403 C 172.744,78.403 170.084,77.633 167.794,76.293 Z"/>
+                </Canvas>
+                <Canvas>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 190.240,69.478 L 184.620,66.208 C 185.399,64.878 185.849,63.338 185.849,61.678 C 185.849,60.018 185.399,58.468 184.610,57.138 L 190.230,53.848 C 191.579,56.148 192.349,58.818 192.349,61.678 C 192.349,64.528 191.579,67.188 190.240,69.478 Z"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 184.609,57.138 L 190.229,53.848"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 190.239,69.478 L 184.619,66.208"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 184.609,57.138 L 190.229,53.848"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 190.239,69.478 L 184.619,66.208"/>
+                </Canvas>
+                <Canvas>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 183.424,47.033 L 180.154,52.653 C 178.824,51.873 177.284,51.423 175.624,51.423 C 173.964,51.423 172.414,51.873 171.084,52.663 L 167.794,47.043 C 170.094,45.693 172.764,44.923 175.624,44.923 C 178.474,44.923 181.135,45.693 183.424,47.033 Z"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 171.084,52.663 L 167.794,47.043"/>
+                    <Path StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Data="F1 M 183.424,47.033 L 180.154,52.653"/>
+                </Canvas>
+                <Path Opacity="0.7" StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Fill="#ffffffff" Data="F1 M 81.396,4.663 L 58.721,4.663 L 58.721,0.918 L 81.396,0.918 L 81.396,4.663 Z"/>
+                <Path Opacity="0.7" StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Fill="#ffffffff" Data="F1 M 225.323,4.663 L 202.648,4.663 L 202.648,0.918 L 225.323,0.918 L 225.323,4.663 Z"/>
+                <Path Opacity="0.7" StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Fill="#ffffffff" Data="F1 M 72.156,36.658 L 45.224,36.658 L 45.224,29.538 L 72.156,29.538 L 72.156,36.658 Z"/>
+                <Path Opacity="0.7" StrokeThickness="1.0" Stroke="#ff221e1f" StrokeMiterLimit="1.0" Fill="#ffffffff" Data="F1 M 238.335,36.658 L 211.403,36.658 L 211.403,29.538 L 238.335,29.538 L 238.335,36.658 Z"/>
+            </Canvas>
+        </Canvas>
+    </Window.Resources>
+    <Grid x:Name="mainGrid">
+        <Viewbox x:Name="viewBoxInstrument" HorizontalAlignment="Center" Height="50" Margin="536,278,14,0" VerticalAlignment="Top" Width="107" Child="{StaticResource ResourceKey=Instrument}" Visibility="{Binding Path=InstrumentVisibility, Mode=OneWay}" ToolTip="{Binding Path=DeviceName, Mode=OneWay}"/>
+        <Rectangle HorizontalAlignment="Left" Height="45" Margin="10,80,0,0" VerticalAlignment="Top" Width="225" Fill="#3300B1EB"/>
+        <Rectangle HorizontalAlignment="Left" Height="45" Margin="10,30,0,0" VerticalAlignment="Top" Width="225" Fill="#3300B1EB"/>
+        <TextBlock x:Name="textBlockX" Margin="65,32,0,0" TextWrapping="Wrap" Text="{Binding XValue}" VerticalAlignment="Top" FontSize="26.667" RenderTransformOrigin="0,0" TextAlignment="Right" HorizontalAlignment="Left" Width="110" FontWeight="Bold" MaxWidth="130" MaxHeight="35"/>
+        <Menu x:Name="menuTop" Height="22" VerticalAlignment="Top">
+            <MenuItem x:Name="menuItemFile" Header="File">
+                <MenuItem x:Name="menuItemFileNew" Header="New" Click="menuItemFileNew_Click"/>
+                <Separator/>
+                <MenuItem x:Name="menuItemFileLogManualAndSweep" Header="Log Manual and Sweep" IsCheckable="True" ToolTip="Log manually triggered measurements and all frequency sweep measurements"/>
+                <MenuItem x:Name="menuItemFileLogAll" Header="Log Continuous" IsCheckable="True" ToolTip="Log continually triggered measurements"/>
+                <MenuItem x:Name="menuItemFileLogSettings" Header="Settings" Click="menuItemFileLogSettings_Click"/>
+                <Separator/>
+                <MenuItem x:Name="menuItemFileClose" Header="Close" IsEnabled="{Binding IsLogging, Mode=OneWay}" Click="menuItemFileClose_Click"/>
+                <Separator/>
+                <MenuItem x:Name="menuItemFileExit" Header="Exit" Click="menuItemFileExit_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="menuItemConnection" Header="Connection" MouseEnter="MenuItemConnection_MouseEnter"/>
+            <MenuItem x:Name="menuItemHelp" Header="Help">
+                <MenuItem x:Name="menuItemHelpAbout" Header="About" Click="menuItemHelpAbout_Click"/>
+                <MenuItem x:Name="menuItemHelpHowToConnect" Header="How to connect" Click="menuItemHelpHowToConnect_Click"/>
+            </MenuItem>
+        </Menu>
+        <Separator Height="10" Margin="0,138,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelXUnit" Content="{Binding XUnit}" HorizontalAlignment="Left" Margin="178,27,0,0" VerticalAlignment="Top" FontSize="26.667"/>
+        <Label x:Name="labelXName" Content="{Binding XSymbol}" HorizontalAlignment="Left" Margin="15,27,0,0" VerticalAlignment="Top" FontSize="26.667"/>
+        <TextBlock x:Name="textBlockY" Margin="65,82,0,0" TextWrapping="Wrap" Text="{Binding YValue}" VerticalAlignment="Top" FontSize="26.667" TextAlignment="Right" HorizontalAlignment="Left" Width="110" FontWeight="Bold" MaxHeight="35" MaxWidth="130"/>
+        <Label x:Name="labelYName" Content="{Binding YSymbol}" HorizontalAlignment="Left" Margin="15,77,0,0" VerticalAlignment="Top" FontSize="26.667"/>
+        <Label x:Name="labelYUnit" Content="{Binding YUnit}" HorizontalAlignment="Left" Margin="178,77,0,0" VerticalAlignment="Top" FontSize="26.667"/>
+        <ComboBox x:Name="comboBoxMode" HorizontalAlignment="Left" Margin="320,37,0,0" VerticalAlignment="Top" Width="75" SelectedIndex="{Binding ModeIndex, Mode=OneWay}" SelectionChanged="comboBoxMode_SelectionChanged" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}" ToolTip="Device mode – equivalent circuit model"/>
+        <ComboBox x:Name="comboBoxFrequency" HorizontalAlignment="Left" Margin="320,64,0,0" VerticalAlignment="Top" Width="75" SelectedIndex="{Binding FrequencyIndex, Mode=OneWay}" SelectionChanged="comboBoxFrequency_SelectionChanged" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}" ToolTip="Test signal frequency"/>
+        <TextBox x:Name="textBoxVoltage" HorizontalAlignment="Left" Height="23" Margin="320,91,0,0" TextWrapping="Wrap" Text="{Binding TestSignal, Mode=OneWay}" VerticalAlignment="Top" Width="75" KeyUp="textBoxVoltage_KeyUp" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}" VerticalContentAlignment="Center" ToolTip="Test signal voltage, press Enter to assign a new value"/>
+        <Label x:Name="labelVoltage" Content="Vrms" HorizontalAlignment="Left" Margin="398,89,0,0" VerticalAlignment="Top"/>
+        <GroupBox x:Name="groupBoxModel" Header="Circuit model" HorizontalAlignment="Left" Margin="170,150,0,0" VerticalAlignment="Top" Height="100" Width="150" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}">
+            <Grid Margin="0,5,0,0">
+                <RadioButton x:Name="radioButtonModelSeries" Content="Series" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" IsChecked="{Binding ModelSeries, Mode=TwoWay}" ToolTip="Switch to series component model"/>
+                <RadioButton x:Name="radioButtonModelParallel" Content="Parallel" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" IsChecked="{Binding ModelParallel, Mode=TwoWay}" ToolTip="Switch to parallel component model"/>
+                <Button x:Name="buttonModelAuto" Content="Auto" Margin="10,5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75" Click="buttonModelAuto_Click" ToolTip="Set automatic circuit model"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBoxTrigger" Header="Trigger" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Height="100" Width="150" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}">
+            <Grid Margin="0,5,0,0">
+                <Button x:Name="buttonMeasure" Content="Measure" Margin="10,5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75" Click="buttonMeasure_Click" ToolTip="Trigger single measurement"/>
+                <RadioButton x:Name="radioButtonMeasureSingle" Content="Single" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" GroupName="Measure" IsChecked="{Binding TriggerSingle, Mode=TwoWay}" ToolTip="Switch to single measurement"/>
+                <RadioButton x:Name="radioButtonMeasureContinuous" Content="Continuous" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" GroupName="Measure" IsChecked="{Binding TriggerContinuous, Mode=TwoWay}" ToolTip="Switch to continuous measurement (default)"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBoxSpeed" Header="Measurement speed" HorizontalAlignment="Left" Margin="170,255,0,0" VerticalAlignment="Top" Height="100" Width="150" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}">
+            <Grid Margin="0,5,0,0">
+                <RadioButton x:Name="radioButtonSpeedFast" Content="Fast (14 SPS)" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Speed" IsChecked="{Binding SpeedFast, Mode=TwoWay}" ToolTip="Switch to fast measurement speed"/>
+                <RadioButton x:Name="radioButtonSpeedMedium" Content="Medium (8 SPS)" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" GroupName="Speed" IsChecked="{Binding SpeedMedium, Mode=TwoWay}" ToolTip="Switch to medium measurement speed"/>
+                <RadioButton x:Name="radioButtonSpeedSlow" Content="Slow (1.5 SPS)" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" GroupName="Speed" IsChecked="{Binding SpeedSlow, Mode=TwoWay}" ToolTip="Switch to slow measurement speed (default)"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBoxAveraging" Header="Averaging" HorizontalAlignment="Left" Margin="10,255,0,0" VerticalAlignment="Top" Height="100" Width="150" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}">
+            <Grid Margin="0,5,0,0">
+                <RadioButton x:Name="radioButtonAveragingNone" Content="None" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Averaging" IsChecked="{Binding AveragingNone, Mode=TwoWay}" ToolTip="No averaging (default)"/>
+                <RadioButton x:Name="radioButtonAveragingSix" Content="Medium (6 samples)" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" GroupName="Averaging" IsChecked="{Binding AveragingMedium, Mode=TwoWay}" ToolTip="Reject the highest and lowest measurement and calculate the average from the rest 4 samples"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBoxCompensation" Header="Compensation" HorizontalAlignment="Left" Margin="440,25,0,0" VerticalAlignment="Top" Height="110" Width="200" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}">
+            <Grid Margin="0,5,0,0">
+                <RadioButton x:Name="radioButtonCompensationThisFrequency" Content="This frequency" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Compensation" IsChecked="True" ToolTip="Compensate the current frequency"/>
+                <RadioButton x:Name="radioButtonCompensationAllFrequencies" Content="All frequencies (~2 minutes)" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" GroupName="Compensation" ToolTip="Compensate all 69 frequencies"/>
+                <Button x:Name="buttonCompensationOpen" Content="Open" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="75" Click="buttonCompensationOpen_Click" ToolTip="Compensate open circuit"/>
+                <Button x:Name="buttonCompensationShort" Content="Short" HorizontalAlignment="Left" Margin="100,55,0,0" VerticalAlignment="Top" Width="75" Click="buttonCompensationShort_Click" ToolTip="Compensate short circuit"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="buttonReset" Content="Reset" Margin="551,334,0,0" Height="20" VerticalAlignment="Top" Click="buttonReset_Click" HorizontalAlignment="Left" Width="75" ToolTip="Reset device"/>
+        <GroupBox x:Name="groupBoxSweep" Header="Frequency sweep" HorizontalAlignment="Left" Margin="330,150,0,0" VerticalAlignment="Top" Height="205" Width="200">
+            <Grid Margin="0,5,0,0">
+                <Button x:Name="buttonSweepStartStop" Content="{Binding SweepButtonContent, Mode=OneWay}" HorizontalAlignment="Left" Margin="105,106,0,0" VerticalAlignment="Top" Width="75" Click="buttonSweepStartStop_Click"/>
+                <Label x:Name="labelSweepRepeatsRemaining" Content="{Binding RemainingRepeats, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top"/>
+                <Grid x:Name="gridFrequencyInner" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}">
+                    <ComboBox x:Name="comboBoxSweepStart" HorizontalAlignment="Left" Margin="105,7,-80,0" VerticalAlignment="Top" Width="75" ToolTip="Initial test signal frequency"/>
+                    <ComboBox x:Name="comboBoxSweepStop" HorizontalAlignment="Left" Margin="105,34,-80,0" VerticalAlignment="Top" Width="75" ToolTip="Final test signal frequency"/>
+                    <Label x:Name="labelSweepStart" Content="Start frequency" HorizontalAlignment="Left" Margin="7,5,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="labelSweepStop" Content="End frequency" HorizontalAlignment="Left" Margin="7,32,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBoxSweepRepeats" HorizontalAlignment="Left" Height="23" Margin="105,61,-80,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Text="1" IsEnabled="{Binding IsChecked, Converter={StaticResource InverseBooleanConverter}, ElementName=checkBoxSweepRepeatsInfinite}" VerticalContentAlignment="Center" ToolTip="Number of repeats of whole sweep sequence"/>
+                    <CheckBox x:Name="checkBoxSweepRepeatsInfinite" Content="Infinite" HorizontalAlignment="Left" Margin="105,88,-62,-3" VerticalAlignment="Top" ToolTip="Repeat until manually cancelled"/>
+                    <Label x:Name="labelSweepRepeats" Content="Repeats" HorizontalAlignment="Left" Margin="7,59,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="buttonFrequencyDown" HorizontalAlignment="Left" Margin="403,75,0,0" VerticalAlignment="Top" Width="14" Height="11" Click="buttonFrequencyDown_Click" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}" ToolTip="Decrease frequency">
+            <TextBlock Text="−" Margin="0,-6,0,0" />
+        </Button>
+        <Button x:Name="buttonFrequencyUp" HorizontalAlignment="Left" Margin="403,64,0,0" VerticalAlignment="Top" Width="14" Height="11" Click="buttonFrequencyUp_Click" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}" ToolTip="Increase frequency">
+            <TextBlock Text="+" Margin="0,-6,0,0" />
+        </Button>
+        <Label x:Name="labelMode" Content="Mode" HorizontalAlignment="Left" Margin="250,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelFrequency" Content="Frequency" HorizontalAlignment="Left" Margin="250,62,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelVoltage1" Content="Test signal" HorizontalAlignment="Left" Margin="250,89,0,0" VerticalAlignment="Top"/>
+        <Viewbox Width="108" Margin="535,161,0,0" HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" MouseUp="logo_MouseUp" ToolTip="Open GitHub repository">
+            <Border BorderThickness="1" Width="Auto" Height="Auto" MouseUp="logo_MouseUp" Background="#00000000">
+                <Border.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <Trigger Property="Border.IsMouseOver" Value="True">
+                                <Setter Property="Border.BorderBrush" Value="#FF0466AA" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+                <ContentControl Content="{StaticResource Logo}" Margin="10, 10, 10, 10"></ContentControl>
+            </Border>
+        </Viewbox>
+        <StatusBar x:Name="statusBarBottom" Height="24" VerticalAlignment="Bottom">
+            <StatusBarItem x:Name="statusBarBottomFilePath" HorizontalAlignment="Left" Content="{Binding FilePath}"/>
+            <StatusBarItem x:Name="statusBarBottomConnection" HorizontalAlignment="Right" Content="{Binding ConnectionDetails}"/>
+        </StatusBar>
+        <Rectangle Fill="#00000000" HorizontalAlignment="Left" Height="95" Margin="10,30,0,0" VerticalAlignment="Top" Width="225">
+            <Rectangle.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="CopyMainValues" Click="MenuItemCopyMainValues_Click" Header="Copy values only">
+                        <MenuItem.Icon>
+                            <Viewbox Child="{StaticResource ClipboardValueIcon}"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="CopyMainValuesWithUnits" Click="MenuItemCopyMainValuesWithUnits_Click"  Header="Copy values with units">
+                        <MenuItem.Icon>
+                            <Viewbox Child="{StaticResource ClipboardUnitIcon}"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </Rectangle.ContextMenu>
+        </Rectangle>
+    </Grid>
+</Window>
