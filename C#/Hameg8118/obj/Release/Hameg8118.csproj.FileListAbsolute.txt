@@ -112,3 +112,26 @@ C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Relea
 C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Release\Hameg8118.g.resources
 C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Release\Hameg8118.Properties.Resources.resources
 C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Release\Hameg8118.csproj.GenerateResource.Cache
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\bin\Release\Hameg8118.exe.config
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\Hameg8118.exe
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\Hameg8118.pdb
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\bin\Release\Hameg8118.exe
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\bin\Release\Hameg8118.pdb
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\Hameg8118.csprojResolveAssemblyReference.cache
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\About.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\Compensation.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\HowToConnect.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\LogSettings.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\MainWindow.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\App.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\Hameg8118_MarkupCompile.cache
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\Hameg8118_MarkupCompile.lref
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\About.baml
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\Compensation.baml
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\HowToConnect.baml
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\LogSettings.baml
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\MainWindow.baml
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\Hameg8118.g.resources
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\Hameg8118.Properties.Resources.resources
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Release\Hameg8118.csproj.GenerateResource.Cache

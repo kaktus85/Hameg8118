@@ -150,3 +150,26 @@ C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug
 C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\Hameg8118.g.resources
 C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\Hameg8118.Properties.Resources.resources
 C:\Users\jpolonsky\Desktop\HM8118 kaktus circuits 1.1.0.1\C#\Hameg8118\obj\Debug\Hameg8118.csproj.GenerateResource.Cache
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\bin\Debug\Hameg8118.exe.config
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\Hameg8118.exe
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\Hameg8118.pdb
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\bin\Debug\Hameg8118.exe
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\bin\Debug\Hameg8118.pdb
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\Hameg8118.csprojResolveAssemblyReference.cache
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\About.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\Compensation.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\HowToConnect.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\LogSettings.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\MainWindow.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\App.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.cache
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\Hameg8118_MarkupCompile.lref
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\About.baml
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\Compensation.baml
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\HowToConnect.baml
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\LogSettings.baml
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\MainWindow.baml
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\Hameg8118.g.resources
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\Hameg8118.Properties.Resources.resources
+C:\Dokumenty\Git\Hameg8118\C#\Hameg8118\obj\Debug\Hameg8118.csproj.GenerateResource.Cache

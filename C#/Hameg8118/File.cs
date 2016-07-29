@@ -144,6 +144,7 @@ namespace Hameg8118
                 {
                     stringBuilder.Append("N/A");
                 }
+                stringBuilder.Append(Global.Delimiter);
                 // x symbol
                 stringBuilder.Append(device.XSymbol);
                 stringBuilder.Append(Global.Delimiter);
