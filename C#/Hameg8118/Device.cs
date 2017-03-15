@@ -22,6 +22,10 @@ namespace Hameg8118
         private Model model;
         private Averaging averaging;
         private Speed speed;
+        private BiasMode biasMode;
+        private ConstantVoltage constantVoltage;
+        private double biasVoltage;
+        private double biasCurrent;
 
         // <CONSTRUCTORS>
         // </CONSTRUCTORS>
@@ -216,6 +220,40 @@ namespace Hameg8118
         }
 
         /// <summary>
+        /// Gets or sets bias mode
+        /// </summary>
+        public BiasMode BiasMode
+        {
+            get
+            {
+                return biasMode;
+            }
+            set
+            {
+                biasMode = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets constant Voltage Flag
+        /// </summary>
+        public ConstantVoltage ConstantVoltage
+        {
+            get
+            {
+                return constantVoltage;
+            }
+            set
+            {
+                constantVoltage = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+
+
+        /// <summary>
         /// Gets or sets frequency index (not frequency in Hz!)
         /// </summary>
         public int FrequencyIndex
@@ -312,6 +350,39 @@ namespace Hameg8118
                 NotifyPropertyChanged();
             }
         }
+
+        /// <summary>
+        /// Gets or sets measurement voltage (RMS)
+        /// </summary>
+        public double BiasVoltage // Volts DC
+        {
+            get
+            {
+                return biasVoltage;
+            }
+            set
+            {
+                biasVoltage = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets measurement voltage (RMS)
+        /// </summary>
+        public double BiasCurrent // Amps DC
+        {
+            get
+            {
+                return biasCurrent;
+            }
+            set
+            {
+                biasCurrent = value;
+                NotifyPropertyChanged();
+            }
+        }
+
 
         // </PROPERTIES>
 

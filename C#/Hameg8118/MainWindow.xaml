@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hameg8118"
         mc:Ignorable="d"
-        Title="Hameg 8118 Control Program – kaktus circuits" Height="425" Width="665" MaxHeight="425" MaxWidth="665" MinWidth="262" MinHeight="192" Closing="startingWindow_Closing" Icon="icon.ico" KeyDown="startingWindow_KeyDown">
+        Title="Hameg 8118 Control Program – kaktus circuits" Height="485" Width="665" MaxHeight="485" MaxWidth="665" MinWidth="262" MinHeight="192" Closing="startingWindow_Closing" Icon="icon.ico" KeyDown="startingWindow_KeyDown"
+        d:DataContext="{d:DesignInstance local:MainWindow, IsDesignTimeCreatable=False}">
+    <!-->-->
     <Window.Resources>
         <local:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
         <Canvas x:Key="ClipboardValueIcon" Width="32" Height="32">
             <Path Fill="#ff000000" Data="F1 M 22.333,19.200 L 22.333,14.933 L 15.933,21.333 L 22.333,27.733 L 22.333,23.467 L 32.000,23.467 L 32.000,19.200 L 22.333,19.200 Z"/>
             <Path Fill="#ff000000" Data="F1 M 23.467,25.600 L 25.600,25.600 L 25.600,29.867 C 25.567,30.467 25.367,30.967 24.967,31.367 C 24.567,31.767 24.067,31.967 23.467,32.000 L 2.133,32.000 C 0.967,32.000 0.000,31.033 0.000,29.867 L 0.000,6.400 C 0.000,5.233 0.967,4.267 2.133,4.267 L 8.533,4.267 C 8.533,1.900 10.433,0.000 12.800,0.000 C 15.167,0.000 17.067,1.900 17.067,4.267 L 23.467,4.267 C 24.633,4.267 25.600,5.233 25.600,6.400 L 25.600,17.067 L 23.467,17.067 L 23.467,10.667 L 2.133,10.667 L 2.133,29.867 L 23.467,29.867 L 23.467,25.600 Z"/>
@@ -150,11 +153,15 @@
         </Canvas>
     </Window.Resources>
     <Grid x:Name="mainGrid">
-        <Viewbox x:Name="viewBoxInstrument" HorizontalAlignment="Center" Height="50" Margin="536,278,14,0" VerticalAlignment="Top" Width="107" Child="{StaticResource ResourceKey=Instrument}" Visibility="{Binding Path=InstrumentVisibility, Mode=OneWay}" ToolTip="{Binding Path=DeviceName, Mode=OneWay}"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Viewbox x:Name="viewBoxInstrument" HorizontalAlignment="Center" Height="50" Margin="28.667,345,10,0" VerticalAlignment="Top" Width="107" Child="{StaticResource ResourceKey=Instrument}" Visibility="{Binding Path=InstrumentVisibility, Mode=OneWay}" ToolTip="{Binding Path=DeviceName, Mode=OneWay}" Grid.Column="1"/>
         <Rectangle HorizontalAlignment="Left" Height="45" Margin="10,80,0,0" VerticalAlignment="Top" Width="225" Fill="#3300B1EB"/>
         <Rectangle HorizontalAlignment="Left" Height="45" Margin="10,30,0,0" VerticalAlignment="Top" Width="225" Fill="#3300B1EB"/>
         <TextBlock x:Name="textBlockX" Margin="65,32,0,0" TextWrapping="Wrap" Text="{Binding XValue}" VerticalAlignment="Top" FontSize="26.667" RenderTransformOrigin="0,0" TextAlignment="Right" HorizontalAlignment="Left" Width="110" FontWeight="Bold" MaxWidth="130" MaxHeight="35"/>
-        <Menu x:Name="menuTop" Height="22" VerticalAlignment="Top">
+        <Menu x:Name="menuTop" Height="22" VerticalAlignment="Top" Grid.ColumnSpan="2">
             <MenuItem x:Name="menuItemFile" Header="File">
                 <MenuItem x:Name="menuItemFileNew" Header="New" Click="menuItemFileNew_Click"/>
                 <Separator/>
@@ -172,7 +179,7 @@
                 <MenuItem x:Name="menuItemHelpHowToConnect" Header="How to connect" Click="menuItemHelpHowToConnect_Click"/>
             </MenuItem>
         </Menu>
-        <Separator Height="10" Margin="0,138,0,0" VerticalAlignment="Top"/>
+        <Separator Height="10" Margin="0,138,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <Label x:Name="labelXUnit" Content="{Binding XUnit}" HorizontalAlignment="Left" Margin="178,27,0,0" VerticalAlignment="Top" FontSize="26.667"/>
         <Label x:Name="labelXName" Content="{Binding XSymbol}" HorizontalAlignment="Left" Margin="15,27,0,0" VerticalAlignment="Top" FontSize="26.667"/>
         <TextBlock x:Name="textBlockY" Margin="65,82,0,0" TextWrapping="Wrap" Text="{Binding YValue}" VerticalAlignment="Top" FontSize="26.667" TextAlignment="Right" HorizontalAlignment="Left" Width="110" FontWeight="Bold" MaxHeight="35" MaxWidth="130"/>
@@ -209,7 +216,7 @@
                 <RadioButton x:Name="radioButtonAveragingSix" Content="Medium (6 samples)" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" GroupName="Averaging" IsChecked="{Binding AveragingMedium, Mode=TwoWay}" ToolTip="Reject the highest and lowest measurement and calculate the average from the rest 4 samples"/>
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupBoxCompensation" Header="Compensation" HorizontalAlignment="Left" Margin="440,25,0,0" VerticalAlignment="Top" Height="110" Width="200" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}">
+        <GroupBox x:Name="groupBoxCompensation" Header="Compensation" HorizontalAlignment="Left" Margin="440,25,0,0" VerticalAlignment="Top" Height="110" Width="200" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}" Grid.ColumnSpan="2">
             <Grid Margin="0,5,0,0">
                 <RadioButton x:Name="radioButtonCompensationThisFrequency" Content="This frequency" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" GroupName="Compensation" IsChecked="True" ToolTip="Compensate the current frequency"/>
                 <RadioButton x:Name="radioButtonCompensationAllFrequencies" Content="All frequencies (~2 minutes)" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" GroupName="Compensation" ToolTip="Compensate all 69 frequencies"/>
@@ -217,8 +224,8 @@
                 <Button x:Name="buttonCompensationShort" Content="Short" HorizontalAlignment="Left" Margin="100,55,0,0" VerticalAlignment="Top" Width="75" Click="buttonCompensationShort_Click" ToolTip="Compensate short circuit"/>
             </Grid>
         </GroupBox>
-        <Button x:Name="buttonReset" Content="Reset" Margin="551,334,0,0" Height="20" VerticalAlignment="Top" Click="buttonReset_Click" HorizontalAlignment="Left" Width="75" ToolTip="Reset device"/>
-        <GroupBox x:Name="groupBoxSweep" Header="Frequency sweep" HorizontalAlignment="Left" Margin="330,150,0,0" VerticalAlignment="Top" Height="205" Width="200">
+        <Button x:Name="buttonReset" Content="Reset" Margin="43.667,401,0,0" Height="20" VerticalAlignment="Top" Click="buttonReset_Click" HorizontalAlignment="Left" Width="75" ToolTip="Reset device" Grid.Column="1"/>
+        <GroupBox x:Name="groupBoxSweep" Header="Frequency sweep" HorizontalAlignment="Left" Margin="330,150,0,0" VerticalAlignment="Top" Height="205" Width="200" Grid.ColumnSpan="2">
             <Grid Margin="0,5,0,0">
                 <Button x:Name="buttonSweepStartStop" Content="{Binding SweepButtonContent, Mode=OneWay}" HorizontalAlignment="Left" Margin="105,106,0,0" VerticalAlignment="Top" Width="75" Click="buttonSweepStartStop_Click"/>
                 <Label x:Name="labelSweepRepeatsRemaining" Content="{Binding RemainingRepeats, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top"/>
@@ -242,7 +249,7 @@
         <Label x:Name="labelMode" Content="Mode" HorizontalAlignment="Left" Margin="250,35,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelFrequency" Content="Frequency" HorizontalAlignment="Left" Margin="250,62,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelVoltage1" Content="Test signal" HorizontalAlignment="Left" Margin="250,89,0,0" VerticalAlignment="Top"/>
-        <Viewbox Width="108" Margin="535,161,0,0" HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" MouseUp="logo_MouseUp" ToolTip="Open GitHub repository">
+        <Viewbox Width="108" Margin="23.667,161,0,0" HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" MouseUp="logo_MouseUp" ToolTip="Open GitHub repository" Grid.Column="1">
             <Border BorderThickness="1" Width="Auto" Height="Auto" MouseUp="logo_MouseUp" Background="#00000000">
                 <Border.Style>
                     <Style>
@@ -256,7 +263,7 @@
                 <ContentControl Content="{StaticResource Logo}" Margin="10, 10, 10, 10"></ContentControl>
             </Border>
         </Viewbox>
-        <StatusBar x:Name="statusBarBottom" Height="24" VerticalAlignment="Bottom">
+        <StatusBar x:Name="statusBarBottom" Height="24" VerticalAlignment="Bottom" Grid.ColumnSpan="2">
             <StatusBarItem x:Name="statusBarBottomFilePath" HorizontalAlignment="Left" Content="{Binding FilePath}"/>
             <StatusBarItem x:Name="statusBarBottomConnection" HorizontalAlignment="Right" Content="{Binding ConnectionDetails}"/>
         </StatusBar>
@@ -276,5 +283,23 @@
                 </ContextMenu>
             </Rectangle.ContextMenu>
         </Rectangle>
+        <GroupBox x:Name="groupBoxBias" Header="DC Bias" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top" Height="61" Width="520" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}" Grid.ColumnSpan="2">
+            <Grid Margin="0,5,0,0">
+                <Label x:Name="labelBiasMode" Content="Bias Mode" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,1,0,0"/>
+                <ComboBox x:Name="comboBoxBiasMode" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" SelectedIndex="{Binding BiasModeIndex, Mode=OneWay}" SelectionChanged="comboBoxBiasMode_SelectionChanged" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}" ToolTip="Device Bias Mode" Margin="70,5,0,0"/>
+                <CheckBox x:Name="checkBoxConstantVoltage" Content="Constant Voltage" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="Constant Voltage Enabled" Margin="163,6,0,0" Checked="checkBoxConstantVoltage_Checked"  IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}"/>
+                <Grid x:Name="gridBiasVoltageSetting" Visibility="{Binding BiasVoltageAvailable, Converter={StaticResource  BoolToVis} }" Margin="280,0,0,0" >
+                    <Label x:Name="labelBiasVoltage" Content="Bias Voltage" HorizontalAlignment="Left" Margin="0,1,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBoxBiasVoltage" HorizontalAlignment="Left" Height="23" Margin="70,3,0,0" TextWrapping="Wrap" Text="{Binding BiasVoltage, Mode=OneWay}" VerticalAlignment="Top" Width="75" KeyUp="textBoxBiasVoltage_KeyUp" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}" VerticalContentAlignment="Center" ToolTip="Bias voltage, press Enter to assign a new value"/>
+                    <Label x:Name="labelBiasVoltageUnits" Content="V" HorizontalAlignment="Left" Margin="148,1,0,0" VerticalAlignment="Top"/>
+                </Grid>
+                <Grid x:Name="gridBiasCurrentSetting"  Visibility="{Binding BiasCurrentAvailable, Converter={StaticResource  BoolToVis} }" Margin="280,0,0,0" >
+                    <Label x:Name="labelBiasCurrent" Content="Bias Current" HorizontalAlignment="Left" Margin="0,1,0,0" VerticalAlignment="Top" />
+                    <TextBox x:Name="textBoxBiasCurrent" HorizontalAlignment="Left" Height="23" Margin="70,3,0,0" TextWrapping="Wrap" Text="{Binding BiasCurrent, Mode=OneWay}" VerticalAlignment="Top" Width="75" KeyUp="textBoxBiasCurrent_KeyUp" IsEnabled="{Binding Sweep, Converter={StaticResource InverseBooleanConverter}, Mode=OneWay}" VerticalContentAlignment="Center" ToolTip="Bias current, press Enter to assign a new value" />
+                    <Label x:Name="labelBiasCurrentUnits" Content="A" HorizontalAlignment="Left" Margin="148,1,0,0" VerticalAlignment="Top" />
+                </Grid>
+
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>

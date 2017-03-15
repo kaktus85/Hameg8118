@@ -30,6 +30,37 @@
         }
 
         /// <summary>
+        /// Returns a string representation of BiasMode enumeration
+        /// </summary>
+        /// <param name="biasMode">Mode</param>
+        /// <returns>String representation of Mode enumeration</returns>
+        public static string Name(this BiasMode biasMode)
+        {
+            switch (biasMode)
+            {
+                case BiasMode.Off: return "Off";
+                case BiasMode.Internal: return "Internal";
+                case BiasMode.External: return "External";
+                default: return string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Returns a string representation of ConstantVoltage enumeration
+        /// </summary>
+        /// <param name="constantVoltage">Mode</param>
+        /// <returns>String representation of Mode enumeration</returns>
+        public static string Name(this ConstantVoltage constantVoltage)
+        {
+            switch (constantVoltage)
+            {
+                case ConstantVoltage.Off: return "Off";
+                case ConstantVoltage.On: return "On";
+                default: return string.Empty;
+            }
+        }
+
+        /// <summary>
         /// Returns command that has to be sent over serial port to the device
         /// </summary>
         /// <param name="command">Command</param>
@@ -54,7 +85,10 @@
                 case Commands.CompensateOpen: return "CROP";
                 case Commands.CompensateShort: return "CRSH";
                 case Commands.Wait: return "*WAI";
-
+                case Commands.BiasMode: return "BIAS";
+                case Commands.BiasVoltage: return "VBIA";
+                case Commands.BiasCurrent: return "IBIA";
+                case Commands.ConstantVoltage: return "CONV";
                 default: return string.Empty;
             }
         }

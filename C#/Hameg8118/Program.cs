@@ -123,6 +123,10 @@ namespace Hameg8118
             port.Query(new Transaction(Commands.Model));            
             port.Query(new Transaction(Commands.Averaging));
             port.Query(new Transaction(Commands.Speed));
+            port.Query(new Transaction(Commands.BiasMode));
+            port.Query(new Transaction(Commands.BiasVoltage));
+            port.Query(new Transaction(Commands.BiasCurrent));
+            port.Query(new Transaction(Commands.ConstantVoltage));
         }
         
         /// <summary>
@@ -220,8 +224,48 @@ namespace Hameg8118
             {
                 Set(Commands.Voltage, voltage.ToString(CultureInfo.InvariantCulture));
             }            
+        }        
+        /// <summary>
+        /// Set new bias voltage level for the test signal
+        /// </summary>
+        /// <param name="biasVoltage">Voltage in Vrms</param>
+        public void SetBiasVoltage(double biasVoltage)
+        {
+            if ((biasVoltage >= 0) && (biasVoltage <= 5)) // validate values
+            {
+                Set(Commands.BiasVoltage, biasVoltage.ToString(CultureInfo.InvariantCulture));
+            }            
+        }        
+        /// <summary>
+        /// Set new bias current level for the test signal
+        /// </summary>
+        /// <param name="biasCurrent">Voltage in Vrms</param>
+        public void SetBiasCurrent(double biasCurrent)
+        {
+            if ((biasCurrent >= 0.001) && (biasCurrent <= 0.2)) // validate values
+            {
+                Set(Commands.BiasCurrent, biasCurrent.ToString(CultureInfo.InvariantCulture));
+            }            
         }
-        
+
+        /// <summary>
+        /// Set new bias mode
+        /// </summary>
+        /// <param name="biasMode">BiasMode</param>
+        public void SetBiasMode(BiasMode biasMode)
+        {
+            Set(Commands.BiasMode, (int)biasMode);
+        }
+
+        /// <summary>
+        /// Set new constant Voltage mode
+        /// </summary>
+        /// <param name="constantVoltage">BiasMode</param>
+        public void SetConstantVoltage(ConstantVoltage constantVoltage)
+        {
+            Set(Commands.ConstantVoltage, (int)constantVoltage);
+        }
+
         /// <summary>
         /// Set new mode
         /// </summary>
@@ -567,8 +611,7 @@ namespace Hameg8118
                     }
                 case Commands.Mode:
                     {
-                        try
-                        { device.Mode = (Mode)(int.Parse(transaction.Response)); }
+                        try { device.Mode = (Mode)(int.Parse(transaction.Response)); }
                         catch (Exception) { Reset(); }
                         break;
                     }
@@ -623,7 +666,37 @@ namespace Hameg8118
                         }
                         port.Flush();         
                         break;
-                    }                
+                    }
+                case Commands.Identify:
+                    break;
+                case Commands.Reset:
+                    break;
+                case Commands.Ready:
+                    break;
+                case Commands.MeasureSingle:
+                    break;
+                case Commands.SetCompensate:
+                    break;
+                case Commands.Wait:
+                    break;
+                case Commands.BiasMode:
+                    try { device.BiasMode = (BiasMode)(int.Parse(transaction.Response)); }
+                    catch (Exception) { Reset(); }
+                    break;
+                case Commands.BiasVoltage:
+                    try { device.BiasVoltage = double.Parse(transaction.Response, CultureInfo.InvariantCulture); }
+                    catch (Exception) { Reset(); }
+                    break;
+                case Commands.BiasCurrent:
+                    try { device.BiasCurrent = double.Parse(transaction.Response, CultureInfo.InvariantCulture); }
+                    catch (Exception) { Reset(); }
+                    break;
+                case Commands.ConstantVoltage:
+                    try { device.ConstantVoltage = (ConstantVoltage)int.Parse(transaction.Response); }
+                    catch (Exception) { Reset(); }
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
