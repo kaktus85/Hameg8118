@@ -55,6 +55,12 @@ namespace Hameg8118
             {
                 comboBoxMode.Items.Add(((Mode)i).Name());
             }
+            // fill combo box bias modes
+            Array biasmodes = Enum.GetValues(typeof(BiasMode));
+            foreach (int i in biasmodes)
+            {
+                comboBoxBiasMode.Items.Add(((BiasMode)i).Name());
+            }
 
             // fill frequency combo boxes
             foreach (int i in Global.Frequencies)
@@ -139,6 +145,12 @@ namespace Hameg8118
             bindingExpressions.Add(menuItemFileClose.GetBindingExpression(MenuItem.IsEnabledProperty));
             bindingExpressions.Add(viewBoxInstrument.GetBindingExpression(Viewbox.VisibilityProperty));
             bindingExpressions.Add(viewBoxInstrument.GetBindingExpression(Viewbox.ToolTipProperty));
+
+            bindingExpressions.Add(textBoxBiasVoltage.GetBindingExpression(TextBox.IsEnabledProperty));
+            bindingExpressions.Add(textBoxBiasCurrent.GetBindingExpression(TextBox.IsEnabledProperty));
+            bindingExpressions.Add(checkBoxConstantVoltage.GetBindingExpression(CheckBox.IsEnabledProperty));
+            bindingExpressions.Add(gridBiasVoltageSetting.GetBindingExpression(Grid.VisibilityProperty));
+            bindingExpressions.Add(gridBiasCurrentSetting.GetBindingExpression(Grid.VisibilityProperty));
         }
 
         // </CONSTRUCTORS>
@@ -177,7 +189,7 @@ namespace Hameg8118
         {
             get
             {
-                if ((program.State is Ready) && (program.Device.Values.X != null))
+                if ((program.State is Ready) && (program.Device.Values?.X != null))
                 {
                     double x = (double)(program.Device.Values.X);
                     Converters.Prefix(ref x);
@@ -195,7 +207,7 @@ namespace Hameg8118
         {
             get
             {
-                if ((program.State is Ready) && (program.Device.Values.Y != null))
+                if ((program.State is Ready) && (program.Device.Values?.Y != null))
                 {
                     double y = (double)(program.Device.Values.Y);
                     switch (program.Device.Mode)
@@ -224,7 +236,7 @@ namespace Hameg8118
         {
             get
             {
-                if ((program.State is Ready) && (program.Device.Values.X != null))
+                if ((program.State is Ready) && (program.Device.Values?.X != null))
                 {
                     double x = (double)(program.Device.Values.X);
                     return Converters.Prefix(ref x) + program.Device.XUnit;
@@ -241,7 +253,7 @@ namespace Hameg8118
         {
             get
             {
-                if ((program.State is Ready) && (program.Device.Values.Y != null))
+                if ((program.State is Ready) && (program.Device.Values?.Y != null))
                 {
                     double y = (double)(program.Device.Values.Y);
                     switch (program.Device.Mode)
@@ -579,6 +591,44 @@ namespace Hameg8118
         }
         
         /// <summary>
+        /// Gets bias level in V
+        /// </summary>
+        public string BiasVoltage
+        {
+            get
+            {
+                if (program.State is Ready)
+                {
+                    if (textBoxBiasVoltage.IsKeyboardFocused) // currently being written
+                    {
+                        return textBoxBiasVoltage.Text;
+                    }
+                    return (program.Device.BiasVoltage.ToString(Global.VoltageNumberFormat));
+                }
+                else { return string.Empty; }
+            }
+        }
+        
+        /// <summary>
+        /// Gets bias level in A
+        /// </summary>
+        public string BiasCurrent
+        {
+            get
+            {
+                if (program.State is Ready)
+                {
+                    if (textBoxBiasCurrent.IsKeyboardFocused) // currently being written
+                    {
+                        return textBoxBiasCurrent.Text;
+                    }
+                    return (program.Device.BiasCurrent.ToString(Global.CurrentNumberFormat));
+                }
+                else { return string.Empty; }
+            }
+        }
+        
+        /// <summary>
         /// Gets index of the device mode
         /// </summary>
         public int ModeIndex
@@ -588,6 +638,21 @@ namespace Hameg8118
                 if (program.State is Ready)
                 {
                     return (int)(program.Device.Mode);
+                }
+                else { return -1; }
+            }
+        }
+
+        /// <summary>
+        /// Gets index of the device bias mode
+        /// </summary>
+        public int BiasModeIndex
+        {
+            get
+            {
+                if (program.State is Ready)
+                {
+                    return (int)(program.Device.BiasMode);
                 }
                 else { return -1; }
             }
@@ -608,6 +673,32 @@ namespace Hameg8118
             }
         }
         
+        /// <summary>
+        /// Gets whether Bias Voltage setting is permitted
+        /// </summary>
+        public bool BiasVoltageAvailable
+        {
+            get
+            {
+                if (program.Device.BiasMode.Equals(BiasMode.Internal))
+                    if (program.Device.Mode.Equals(Mode.CD) || program.Device.Mode.Equals(Mode.CR) || program.Device.Mode.Equals(Mode.RX) || program.Device.Mode.Equals(Mode.ZTheta))
+                    return true;
+                return false;
+            }
+        }
+        /// <summary>
+        /// Gets whether Bias Voltage setting is permitted
+        /// </summary>
+        public bool BiasCurrentAvailable
+        {
+            get
+            {
+                if (program.Device.BiasMode.Equals(BiasMode.Internal))
+                    if (program.Device.Mode.Equals(Mode.LQ) || program.Device.Mode.Equals(Mode.LR) /*|| program.Device.Mode.Equals(Mode.NTheta) || program.Device.Mode.Equals(Mode.M)*/)
+                        return true;
+                return false;
+            }
+        }
         /// <summary>
         /// Gets whether sweep is currently running
         /// </summary>
@@ -898,7 +989,42 @@ namespace Hameg8118
                 Keyboard.ClearFocus();
             }
         }
-        
+
+        /// <summary>
+        /// Parse and validate values of bias voltage after user presses Enter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBoxBiasVoltage_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                double newVoltage;
+                if (double.TryParse(textBoxBiasVoltage.Text, out newVoltage))
+                {
+                    program.SetBiasVoltage(newVoltage);
+                }
+                Keyboard.ClearFocus();
+            }
+        }
+
+        /// <summary>
+        /// Parse and validate values of bias voltage after user presses Enter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBoxBiasCurrent_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                double newCurrent;
+                if (double.TryParse(textBoxBiasCurrent.Text, out newCurrent))
+                {
+                    program.SetBiasCurrent(newCurrent);
+                }
+                Keyboard.ClearFocus();
+            }
+        }
         /// <summary>
         /// Handles mode selection
         /// </summary>
@@ -912,6 +1038,30 @@ namespace Hameg8118
             }
         }
         
+        /// <summary>
+        /// Handles bias mode selection
+        /// </summary>
+        /// <param name="sender">Bias Mode combo box</param>
+        /// <param name="e">Parameters</param>
+        private void comboBoxBiasMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (((ComboBox)sender).IsDropDownOpen) // check if this selection was made by user
+            {
+                program.SetBiasMode((BiasMode)(((ComboBox)sender).SelectedIndex));
+            }
+        }
+
+        /// <summary>
+        /// Handles Constant Voltage selection
+        /// </summary>
+        /// <param name="sender">Constant Voltage check box</param>
+        /// <param name="e">Parameters</param>
+        private void checkBoxConstantVoltage_Checked(object sender, RoutedEventArgs e)
+        {
+            program.SetConstantVoltage((((CheckBox)sender).IsChecked??false) ? ConstantVoltage.On : ConstantVoltage.Off);
+        }
+
+
         /// <summary>
         /// Handles frequency selection
         /// </summary>

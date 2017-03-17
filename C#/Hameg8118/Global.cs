@@ -17,16 +17,18 @@ namespace Hameg8118
 
     // <ENUMS>
 
-    public enum Mode { Auto, LQ, LR, CD, CR, RQ, ZTheta, YTheta, RX, GB/*, NPhi, M*/ }; // PMOD    
+    public enum Mode { Auto, LQ, LR, CD, CR, RQ, ZTheta, YTheta, RX, GB/*, NTheta, M*/ }; // PMOD    
     public enum Trigger { Continuous, Manual }; // MMOD
     public enum Model { Series, Parallel, Auto }; // CIRC
     public enum Averaging { None, Medium = 2 }; // AVGM
     public enum Speed { Fast, Medium, Slow }; // RATE
     public enum Compensate { SingleFrequency, AllFrequencies }; // CALL   
     public enum TimeUnits { ms, s, min };
-    public enum Commands { Identify, Reset, Ready, Averaging, Model, Mode, Frequency, Voltage, Speed, Trigger, Values, MeasureSingle, SetCompensate, CompensateOpen, CompensateShort, Wait };
+    public enum Commands { Identify, Reset, Ready, Averaging, Model, Mode, Frequency, Voltage, Speed, Trigger, Values, MeasureSingle, SetCompensate, CompensateOpen, CompensateShort, Wait, BiasMode, BiasVoltage, BiasCurrent, ConstantVoltage };
     public enum TriggerStates { Undefined, Manual, Continuous, Sweep };
     public enum Response { NoResponse, ExpectsResponse };
+    public enum BiasMode { Off = 0, Internal = 1, External = 2 }; //BIAS
+    public enum ConstantVoltage { Off = 0, On = 1 }; //CONV
 
     // </ENUMS>
 
@@ -41,6 +43,7 @@ namespace Hameg8118
 
         public const string NumberFormat = "G6";
         public const string VoltageNumberFormat = "F2";
+        public const string CurrentNumberFormat = "F3";
         public const char Delimiter = '\t'; // delimiter used in exported data       
 
         // serial port settings, specific to HM8118 parameters        
